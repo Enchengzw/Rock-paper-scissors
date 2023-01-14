@@ -13,15 +13,47 @@
          let choice;
          let x = Math.floor(Math.random()*(3)+1);
          if (x==1) {
-            choice = "Rock";
+            choice = "rock";
          }else if (x==2){
-            choice = "Paper";
+            choice = "paper";
          }else {
-            choice = "Scissors";
+            choice = "scissors";
          }
          console.log(choice);
          return choice
         }
+        function playRound(playerchoice,computerchoice){
+            playerchoice = playerchoice.toLowerCase();
+            if (playerchoice == computerchoice){
+                console.log("Tie");
+            }else if (playerchoice == "rock"){
+                if (computerchoice == "paper"){
+                    console.log("You lose Paper beats Rock"); 
+                }else if (computerchoice == "scissors"){
+                    console.log("You win Rock beats Scissors");
+                }
+            }else if (playerchoice == "paper"){
+                if (computerchoice == "scissors"){
+                    console.log("You lose Scissors beats Paper"); 
+                }else if (computerchoice == "rock"){
+                    console.log("You win Paper beats Rock");
+                }
+            }else if (playerchoice == "scissors"){
+                if (computerchoice == "rock"){
+                    console.log("You lose Rock beats Scissors"); 
+                }else if (computerchoice == "paper"){
+                    console.log("You win Scissors beats Paper");
+                }
+            }
+        }
+
+
+
+
+
+
+
+        playRound("rock",GetComputerChoice);
     </script>
 </body>
 </html>
