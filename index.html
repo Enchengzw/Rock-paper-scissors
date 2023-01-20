@@ -9,6 +9,10 @@
 </head>
 <body>
     <div class = box>
+    <div class = scores>
+        <div class = player>Player</div>
+        <div class = cpu>Computer</div>
+    </div>
     <div class = btnbox>
         <h3 class = button id = rock>Rock</h3>
         <h3 class = button id = paper>Paper</h3>
@@ -21,6 +25,10 @@
         let computerscore = 0;
         const container = document.querySelector('.output');
         const content = document.createElement('h1');
+        const playcontainer = document.querySelector('.player');
+        const playscore = document.createElement('div');
+        const cpucontainer = document.querySelector('.cpu');
+        const cpuscore = document.createElement('div');
 
         function GetComputerChoice(){
          let choice;
@@ -45,28 +53,37 @@
                 if (computerchoice == "paper"){
                    content.textContent = "You lose Paper beats Rock";
                     computerscore += 1; 
+                    cpuscore.textContent = computerscore;
                 }else if (computerchoice == "scissors"){
                     content.textContent = "You win Rock beats Scissors";
                     playerscore += 1;
+                    playscore.textContent = playerscore;
                 }
             }else if (playerchoice == "paper"){
                 if (computerchoice == "scissors"){
                     content.textContent = "You lose Scissors beats Paper";
                     computerscore += 1; 
+                    cpuscore.textContent = computerscore;
                 }else if (computerchoice == "rock"){
                     content.textContent = "You win Paper beats Rock";
                     playerscore += 1;
+                    playscore.textContent = playerscore;
                 }
             }else if (playerchoice == "scissors"){
                 if (computerchoice == "rock"){
                     content.textContent = "You lose Rock beats Scissors";
-                    computerscore += 1; 
+                    computerscore += 1;
+                    cpuscore.textContent = computerscore; 
                 }else if (computerchoice == "paper"){
                     content.textContent = "You win Scissors beats Paper";
                     playerscore += 1;
+                    playscore.textContent = playerscore;
                 }
             }
             container.appendChild(content);
+            playcontainer.appendChild(playscore);
+            cpucontainer.appendChild(cpuscore);
+            
         }
         function game(){
             let i;

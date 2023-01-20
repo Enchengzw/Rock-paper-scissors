@@ -45,3 +45,26 @@
     align-items: center;
     justify-content: center;
 }
+
+.scores {
+    display: flex; 
+    flex-direction: row;
+    flex 1;
+    justify-content: space-between;
+    background-color: aquamarine;
+    font-size: 24px;
+    font: bold;
+}
+
+.player {
+    margin-right: auto;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+}
+
+.cpu {
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+}
