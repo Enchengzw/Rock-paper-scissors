@@ -9,9 +9,10 @@
 </head>
 <body>
     <div class = box>
-    <div class = button aria-label = rock>Rock</div>
-    <div class = button aria-label = paper>Paper</div>
-    <div class = button aria-label = scissors>Scissors</div>
+    
+    <div class = button id = rock>Rock</div>
+    <div class = button id = paper>Paper</div>
+    <div class = button id = scissors>Scissors</div>
 </div>
     <script>
         let playerscore = 0;
@@ -81,9 +82,8 @@
 
         const buttons = document.querySelectorAll('.button');
         buttons.forEach((button) => {button.addEventListener('click', () =>
-        playRound(e.target.arialabel,GetComputerChoice()))
+        playRound(button.id,GetComputerChoice()))
         });
-
 
     </script>
 </body>
